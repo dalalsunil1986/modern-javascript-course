@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Counter App - Ghack Dev</title>
+  <style>
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+    }
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .btn-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    #count {
+      font-size: 48pt;
+    }
+  </style>
+</head>
+<body>
+  <div
+    class="container"
+  >
+    <div
+      class="content-wrapper"
+    >
+      <span id="count">0</span>
+      <div
+        class="btn-wrapper"
+      >
+        <button onclick="decrease()">DECREASE</button>
+        <button onclick="increase()">INCREASE</button>        
+      </div>
+    </div>
+  </div>
+
+  <script>    
+    let count = 0;
+
+    function setCount() {
+      const countElement = document.getElementById('count');
+      countElement.innerHTML = count;
+      document.body.style.backgroundColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+    }
+
+    function increase() {
+      count++;
+      setCount();
+    }
+
+    function decrease() {
+      count--
+      setCount();
+    }
+  </script>
+</body>
+</html>
